@@ -6,8 +6,9 @@ const { Item } = require('../models');
 
 // Create a new item
 router.post('/', async (req, res) => {
-  try {
-    const item = await Item.create(req.body);
+    const {name, price} = req.body
+    try {
+      const item = await Item.create({name, price});
     res.status(201).json(item);
   } catch (error) {
     res.status(500).json({ message: 'Error creating item', error });
