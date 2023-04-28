@@ -10,9 +10,8 @@ module.exports = {
     add(req, res) {
         return Order
             .create({
-                title: req.body.title,
-                author: req.body.author,
-                reader_id: parseInt(req.body.reader_id),
+                user_id: req.body.user_id,
+                ordered_date: req.body.ordered_date,
             })
             .then((order) => res.status(201).send(order))
             .catch((error) => res.status(400).send(error));

@@ -10,9 +10,8 @@ module.exports = {
     add(req, res) {
         return Basket
             .create({
-                title: req.body.title,
-                author: req.body.author,
-                reader_id: parseInt(req.body.reader_id),
+                name: req.body.name,
+                price: req.body.price,
             })
             .then((basket) => res.status(201).send(basket))
             .catch((error) => res.status(400).send(error));
