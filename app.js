@@ -9,10 +9,10 @@ require('./config/passport')(passport);
 const authRouter = require('./routes/auth');
 
 var indexRouter = require('./routes/index');
-var basketsRouter = require('./routes/baskets');
-var itemsRouter = require('./routes/items');
-var ordersRouter = require('./routes/orders');
-var usersRouter = require('./routes/users');
+// var basketsRouter = require('./routes/baskets');
+// var itemsRouter = require('./routes/items');
+// var ordersRouter = require('./routes/orders');
+// var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -35,9 +35,9 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/baskets', basketsRouter);
-app.use('/items', itemsRouter);
-app.use('/orders', ordersRouter);
-app.use('/users', usersRouter);
+// app.use('/baskets', basketsRouter);
+// app.use('/items', itemsRouter);
+// app.use('/orders', ordersRouter);
+// app.use('/users', usersRouter);
 
 module.exports = app;
